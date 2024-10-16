@@ -1,6 +1,5 @@
-# Cubos Academy
-
-## Primeiro Servidor
+## Primeiro Servidor   
+ 
 
 ### Qual é o papel de um servidor web?
 Fornecer recursos e dados (conteúdo ou serviços) para os usuários através da internet. É um sistema de computador que recebe solicitações de navegadores e aplicativos, processa-as e envia de volta as páginas, imagens e arquivos solicitados. A principal função de um servidor web é entregar conteúdo digital aos usuários.
@@ -11,19 +10,19 @@ Fornecer recursos e dados (conteúdo ou serviços) para os usuários através da
 O Node.js foi construído com o objetivo de rodar aplicações no lado servidor.
 
 ### O que é um servidor?
-Um servidor é um computador ou sistema que processa requisições e envia respostas para outros computadores na rede, conhecidos como clientes. No contexto do Node.js, um servidor é configurado para receber requisições HTTP e retornar respostas, geralmente enviando páginas web ou dados. O Node.js permite que você crie um servidor HTTP que pode enviar e receber essas requisições. Para mais informações, você pode conferir o vídeo **Servidor Node.js**.
+Um servidor é um computador ou sistema que processa requisições e envia respostas para outros computadores na rede, conhecidos como clientes. No contexto do Node.js, um servidor é configurado para receber requisições HTTP e retornar respostas, geralmente enviando páginas web ou dados. O Node.js permite que você crie um servidor HTTP que pode enviar e receber essas requisições. 
 
 ### O que é uma API?
-API (Application Programming Interface) é um conjunto de instruções que define como diferentes aplicações podem se comunicar entre si. As APIs permitem que sistemas diferentes troquem dados e funcionalidades. Por exemplo, uma API pode permitir que um aplicativo acesse dados de outro sistema, como consultar a previsão do tempo. O servidor que você desenvolve no curso também é considerado uma API. Para mais detalhes, confira o vídeo **API**.
+API (Application Programming Interface) é um conjunto de instruções que define como diferentes aplicações podem se comunicar entre si. As APIs permitem que sistemas diferentes troquem dados e funcionalidades. Por exemplo, uma API pode permitir que um aplicativo acesse dados de outro sistema, como consultar a previsão do tempo. O servidor que você desenvolve no curso também é considerado uma API.
 
 ### O que é o Express?
-O Express é uma biblioteca para Node.js que facilita a criação de servidores HTTP. Ele fornece uma série de ferramentas e funcionalidades que tornam o desenvolvimento de aplicações web mais simples e eficiente. Com o Express, você pode definir rotas, gerenciar requisições e respostas, e configurar middleware de forma rápida. Para mais informações, veja o vídeo **Express.js**.
+O Express é uma biblioteca para Node.js que facilita a criação de servidores HTTP. Ele fornece uma série de ferramentas e funcionalidades que tornam o desenvolvimento de aplicações web mais simples e eficiente. Com o Express, você pode definir rotas, gerenciar requisições e respostas, e configurar middleware de forma rápida. 
 
 ### O que é o Nodemon?
 O Nodemon é uma ferramenta que ajuda no desenvolvimento de aplicações Node.js, pois monitora as alterações no código e reinicia automaticamente o servidor sempre que uma mudança é detectada. Isso elimina a necessidade de parar e reiniciar o servidor manualmente após cada alteração. O Nodemon deve ser instalado como uma dependência de desenvolvimento, pois é útil apenas durante o processo de desenvolvimento.
 
 ### O que é uma dependência de desenvolvimento?
-Dependências de desenvolvimento são bibliotecas ou ferramentas que são necessárias apenas durante o desenvolvimento de uma aplicação, mas não são necessárias quando a aplicação está em produção. Exemplos incluem ferramentas de teste, compiladores e servidores de desenvolvimento, como o Nodemon. Essas dependências são instaladas usando a flag `-D`, por exemplo, `npm install -D nodemon`. Elas não devem ser incluídas no ambiente de produção, pois não são essenciais para o funcionamento da aplicação final.
+Dependências de desenvolvimento são bibliotecas ou ferramentas que são necessárias apenas durante o desenvolvimento de uma aplicação, mas não são necessárias quando a aplicação está em produção. Exemplos incluem ferramentas de teste, compiladores e servidores de desenvolvimento, como o Nodemon. Essas dependências são instaladas usando a flag `-D`, por exemplo, `npm install -D nodemon`. Elas não devem ser incluídas no ambiente de produção, pois não são essenciais para o funcionamento da aplicação final. <br><br><br><br><br>
 
 ## Criando o Primeiro Servidor
 
@@ -56,4 +55,64 @@ Dependências de desenvolvimento são bibliotecas ou ferramentas que são necess
 1. Utilize o método `listen` do Fastify para definir a porta em que o servidor irá escutar (por exemplo, porta 3000).
 
 ### Execução do Projeto
-1. Execute o servidor utilizando `node src/servidor.ts` ou um script de desenvolvimento configurado no `package.json`.
+1. Execute o servidor utilizando `node src/servidor.ts` ou um script de desenvolvimento configurado no `package.json`.  <br><br><br><br><br>
+
+  
+
+## Implementando TypeScript no projeto
+
+1. **Instalação do TypeScript**:
+    - Instale o TypeScript como uma dependência de desenvolvimento com o comando:
+    
+    ```
+    npm install typescript --save-dev
+    ```
+    
+2. **Remoção da Configuração**:
+    - No arquivo `package.json`, remova a configuração `type: module`.
+3. **Inicialização do TypeScript**:
+    - Execute o comando para inicializar o TypeScript:
+    
+    ```
+    npx tsc --init
+    ```
+    
+    - Isso criará um arquivo chamado `tsconfig.json`.
+4. **Configuração do tsconfig.json**:
+    - Abra o `tsconfig.json` e faça as seguintes alterações:
+    - Altere o `target` para `"ES2022"`.
+    - Altere o `outDir` para `"./dist"`.
+5. **Renomeação do Arquivo do Servidor**:
+    - Salve o arquivo do servidor com a extensão TypeScript, mudando de `servidor.js` para `servidor.ts`.
+6. **Transpilação do TypeScript para JavaScript**:
+    - Execute o comando para transpilar os arquivos TypeScript para JavaScript:
+    
+    ```
+    npx tsc
+    ```
+    
+7. **Adicionar a Pasta dist ao .gitignore**:
+    - Adicione a pasta `dist` ao seu arquivo `.gitignore` para que não seja enviada ao repositório Git.
+8. **Scripts de Automação**:
+    - No arquivo `package.json`, adicione os seguintes scripts:
+    
+    ```json
+    "scripts": {"build": "tsc","dev": "node dist/servidor.js"}
+    ```
+    
+9. **Execução do Arquivo JavaScript**:
+    - Após a transpilação, você pode usar os scripts que criou:
+    - Para compilar o TypeScript, execute:
+    
+    ```
+    npm run build
+    ```
+    
+    - Para iniciar o servidor, execute:
+    
+    ```
+    npm run dev
+    ```
+o comando npx tsc transpila um arquivo typescript para javascript
+
+
