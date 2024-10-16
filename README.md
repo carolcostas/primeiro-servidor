@@ -65,7 +65,7 @@ Dependências de desenvolvimento são bibliotecas ou ferramentas que são necess
     - Instale o TypeScript como uma dependência de desenvolvimento com o comando:
     
     ```
-    npm install typescript --save-dev
+    npm install -D typescript ts-node
     ```
     
 2. **Remoção da Configuração**:
