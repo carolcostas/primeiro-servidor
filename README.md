@@ -116,3 +116,38 @@ Dependências de desenvolvimento são bibliotecas ou ferramentas que são necess
 o comando npx tsc transpila um arquivo typescript para javascript
 
 
+
+### Utilização do Express com Tipos no TypeScript
+
+Ao utilizar o Express em projetos com TypeScript, é necessário configurar adequadamente a tipagem para garantir que o código seja seguro e eficiente. Abaixo estão os passos essenciais para configurar e tipar o Express corretamente:
+
+### 1. Instalação dos Tipos do Express
+
+Por padrão, o Express não possui suporte nativo para tipos TypeScript. Portanto, é necessário instalar os tipos do Express separadamente. Utilize o seguinte comando para instalar os tipos:
+
+```
+npm install @types/express
+
+```
+
+Isso garante que o TypeScript reconheça e valide os tipos usados pelo Express no seu projeto.
+
+### 2. Tipagem da Requisição e Resposta
+
+Ao trabalhar com rotas no Express, é importante tipar corretamente os objetos de requisição (`Request`) e resposta (`Response`). Esses tipos são fornecidos pela própria biblioteca `@types/express`. Veja um exemplo de como tipar uma rota no Express:
+
+```tsx
+typescript
+Copiar código
+import { Request, Response } from 'express';
+
+app.get('/rota-exemplo', (req: Request, res: Response) => {
+  res.send('Hello, world!');
+});
+
+```
+
+No exemplo acima:
+
+- `Request`: Tipagem para o objeto de requisição (`req`), que contém dados sobre a solicitação HTTP.
+- `Response`: Tipagem para o objeto de resposta (`res`), que é utilizado para enviar a resposta HTTP de volta ao cliente.
