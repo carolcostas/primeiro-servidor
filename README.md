@@ -151,3 +151,12 @@ No exemplo acima:
 
 - `Request`: Tipagem para o objeto de requisição (`req`), que contém dados sobre a solicitação HTTP.
 - `Response`: Tipagem para o objeto de resposta (`res`), que é utilizado para enviar a resposta HTTP de volta ao cliente.
+
+Durante o desenvolvimento com Express, podemos utilizar o comando ts-node para facilitar o processo de recarregamento automático a cada alteração no projeto. Isso agiliza o ciclo de desenvolvimento, pois não é necessário reiniciar manualmente o servidor. Quando o desenvolvimento estiver concluído, podemos utilizar o comando node para executar a versão final do projeto, já transpilada e pronta para produção.
+
+
+
+
+
+
+
