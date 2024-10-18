@@ -114,10 +114,10 @@ Dependências de desenvolvimento são bibliotecas ou ferramentas que são necess
     npm run dev
     ```
 o comando npx tsc transpila um arquivo typescript para javascript
+<br><br><br><br><br>
 
 
-
-### Utilização do Express com Tipos no TypeScript
+## Utilização do Express com Tipos no TypeScript
 
 Ao utilizar o Express em projetos com TypeScript, é necessário configurar adequadamente a tipagem para garantir que o código seja seguro e eficiente. Abaixo estão os passos essenciais para configurar e tipar o Express corretamente:
 
@@ -156,7 +156,28 @@ Durante o desenvolvimento com Express, podemos utilizar o comando ts-node para f
 
 
 
+<br><br><br><br><br>
 
+## Variáveis de Ambiente no Node.js
+
+As variáveis de ambiente são utilizadas no Node.js para armazenar informações sensíveis, como credenciais de banco de dados, chaves de API, entre outros dados confidenciais.
+
+### Arquivo `.env`
+
+Os dados sensíveis podem ser armazenados em um arquivo chamado `.env`. Este arquivo deve conter variáveis no formato `CHAVE=valor`, que podem ser acessadas no código através do objeto `process.env`.
+
+### Acessando variáveis de ambiente
+
+Para acessar as variáveis definidas no arquivo `.env`, utilize o seguinte comando no Node.js:
+
+```jsx
+const valor = process.env.NOME_DA_VARIAVEL;
+
+```
+
+### Gitignore
+
+É importante lembrar que o arquivo `.env` deve ser adicionado ao `.gitignore` para evitar que essas informações sensíveis sejam incluídas no controle de versão e, assim, mantê-las privadas.
 
 
 
